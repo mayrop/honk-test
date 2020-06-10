@@ -18,6 +18,6 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"    
       - name: Honk
-        uses: mayrop/honk-action@v1
+        uses: mayrop/honk-action@v2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
