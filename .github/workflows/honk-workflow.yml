@@ -1,0 +1,23 @@
+name: Honk workflow
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Honk
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        with:
+          ref: refs/heads/master    
+      - name: Sets Up Git
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"    
+      - name: Honk
+        uses: mayrop/honk-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
